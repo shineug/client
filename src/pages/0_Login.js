@@ -38,13 +38,15 @@ export default function Login() {
             const data = await response.json();
             if(data.error === "MAIL_NOT_VERIFIED") {
                 if(window.confirm("Your email is not verified. Resend verification email?")) {
-                    // await fetch(`${process.env.REACT_APP_API_URL}/resend-verification`, {
-                    //     method: "POST",
-                    //     credentials: "include",
-                    //     headers: { "Content-Type": "application/json" },
-                    //     body: JSON.stringify({ email: data.email })
-                    // });
-                    alert("Verification email resent. Please check your inbox.");
+                    const response = await fetch(`${process.env.REACT_APP_API_URL}/resend`, {
+                        method: "POST",
+                        credentials: "include",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ username })
+                    });
+                    if (response.ok) { 
+                        alert("Verification email resent. Please check your inbox.");
+                    }                    
                 }
             } else if(data.error === "AUTHENTICATION_FAILED") {   
                 alert("Incorrect username or password.");
