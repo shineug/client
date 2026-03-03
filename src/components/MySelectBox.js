@@ -13,8 +13,8 @@ export default function WordSelectBox({limit, setLimit, dateGroup, }) {
             >
                 <MenuItem value="l10">Latest 10 words</MenuItem>
                 <MenuItem value="r10">Random 10 words</MenuItem>
-                <MenuItem value="l50">Latest 50 words</MenuItem>
-                <MenuItem value="r50">Random 50 words</MenuItem>
+                <MenuItem value="l20">Latest 20 words</MenuItem>
+                <MenuItem value="r20">Random 20 words</MenuItem>
 
                 {/* Loop dateGroup */}
                 {Array.isArray(dateGroup) && dateGroup.map((item, index) => (

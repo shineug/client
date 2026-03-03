@@ -127,12 +127,12 @@ export default function Test2() {
     const reShuffle = () => {
         if (limit.includes("l10")) {
             shuffledDataRef.current = shuffle(originDataRef.current.slice(0, 10));
-        } else if(limit.includes("l50")) {
-            shuffledDataRef.current = shuffle(originDataRef.current.slice(0, 50));
+        } else if(limit.includes("l20")) {
+            shuffledDataRef.current = shuffle(originDataRef.current.slice(0, 20));
         } else if(limit.includes("r10")) {
             shuffledDataRef.current = shuffle(originDataRef.current).slice(0, 10);
-        } else if(limit.includes("r50")) {
-            shuffledDataRef.current = shuffle(originDataRef.current).slice(0, 50);
+        } else if(limit.includes("r20")) {
+            shuffledDataRef.current = shuffle(originDataRef.current).slice(0, 20);
         }
 
         shuffledDataRef.current.forEach((item, index) => {
@@ -219,8 +219,8 @@ export default function Test2() {
                     >
                         <MenuItem value="l10">Latest 10 words</MenuItem>
                         <MenuItem value="r10">Random 10 words</MenuItem>
-                        <MenuItem value="l50">Latest 50 words</MenuItem>
-                        <MenuItem value="r50">Random 50 words</MenuItem>
+                        <MenuItem value="l20">Latest 20 words</MenuItem>
+                        <MenuItem value="r20">Random 20 words</MenuItem>
                     </Select>
                     </FormControl>
 

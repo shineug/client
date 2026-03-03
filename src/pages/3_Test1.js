@@ -123,12 +123,12 @@ export default function Test1() {
     const reShuffle = () => {
         if (limit.includes("l10")) {
             shuffledDataRef.current = shuffle(originDataRef.current.slice(0, 10));
-        } else if(limit.includes("l50")) {
-            shuffledDataRef.current = shuffle(originDataRef.current.slice(0, 50));
+        } else if(limit.includes("l20")) {
+            shuffledDataRef.current = shuffle(originDataRef.current.slice(0, 20));
         } else if(limit.includes("r10")) {
             shuffledDataRef.current = shuffle(originDataRef.current).slice(0, 10);
-        } else if(limit.includes("r50")) {
-            shuffledDataRef.current = shuffle(originDataRef.current).slice(0, 50);
+        } else if(limit.includes("r20")) {
+            shuffledDataRef.current = shuffle(originDataRef.current).slice(0, 20);
         } else {
             shuffledDataRef.current = shuffle(originDataRef.current.filter(x => x.reg_ymd === limit));
         }
