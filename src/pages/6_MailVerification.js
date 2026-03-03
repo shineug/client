@@ -16,11 +16,11 @@ export default function MailVerification() {
             return;
         }
 
-        verifyToken();
+        verify();
 
     }, [token]);
 
-    const verifyToken = async () => {
+    const verify = async () => {
 
         const response = await fetch(`${process.env.REACT_APP_API_URL}/verify`, {
             method: "POST",
@@ -32,8 +32,11 @@ export default function MailVerification() {
             window.location.href = "/";
         }
         else { 
-            const errorText = await response.text();
-            setStatus("❌ " + errorText);
+            const data = await response.json();
+            if(data.error === "MAIL_NOT_VERIFIED") {
+                setStatus("❌ " + "Verification failed. Please check your inbox for the verification email.");
+                return;
+            }
         }
     };
 

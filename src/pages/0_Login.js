@@ -30,12 +30,27 @@ export default function Login() {
             credentials: "include",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })
-        });        
+        });
         if (response.ok) { 
             window.location.href = "/";
         }
         else { 
-            alert("Login failed");
+            const data = await response.json();
+            if(data.error === "MAIL_NOT_VERIFIED") {
+                if(window.confirm("Your email is not verified. Resend verification email?")) {
+                    // await fetch(`${process.env.REACT_APP_API_URL}/resend-verification`, {
+                    //     method: "POST",
+                    //     credentials: "include",
+                    //     headers: { "Content-Type": "application/json" },
+                    //     body: JSON.stringify({ email: data.email })
+                    // });
+                    alert("Verification email resent. Please check your inbox.");
+                }
+            } else if(data.error === "AUTHENTICATION_FAILED") {   
+                alert("Incorrect username or password.");
+            } else {
+                alert("Login failed.");
+            }            
         }
     };
 
