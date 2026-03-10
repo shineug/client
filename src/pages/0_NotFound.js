@@ -74,7 +74,7 @@ export default function NotFound() {
                             }}
                         >
                             <Typography paragraph sx={{ textAlign: "justify", }}>
-                                Page not found!
+                                Page not found.
                             </Typography>
                         </Box>
 
