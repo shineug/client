@@ -67,7 +67,7 @@ export default function Header() {
                             overflow: "hidden",
                         }}
                     >
-                        {/* LEFT EMPTY AREA */}
+                        {/* LEFT LOGO AREA */}
                         <Box
                             sx={{
                                 width: 80,
@@ -136,7 +136,7 @@ export default function Header() {
                             </Button>
                         </Box>
 
-                        {/* RIGHT USER AREA */}
+                        {/* RIGHT LOGOUT AREA */}
                         <Box
                             sx={{
                                 width: 80,               // symmetric with left
@@ -161,7 +161,7 @@ export default function Header() {
                             display: "flex"
                         }}
                     >
-                        {/* LEFT EMPTY AREA */}
+                        {/* LEFT LOGO AREA */}
                         <Box
                             sx={{
                                 width: 60,
@@ -271,17 +271,21 @@ export default function Header() {
                                     open={Boolean(aboutMenu)}
                                     onClose={closeAboutMenu}
                                 >
-                                    {/* <MenuItem onClick={() => handleMenuClick("/privacy-policy")}>
-                                        <ListItemIcon><PrivacyTipIcon /></ListItemIcon>
-                                        <ListItemText>Privacy Policy</ListItemText>
-                                    </MenuItem>
-                                    <MenuItem onClick={() => handleMenuClick("/term-of-service")}>
-                                        <ListItemIcon><DescriptionIcon /></ListItemIcon>
-                                        <ListItemText>Terms of Service</ListItemText>
-                                    </MenuItem> */}
                                     <MenuItem onClick={() => handleMenuClick("/about")}>
                                         <ListItemIcon><HelpOutlineIcon /></ListItemIcon>
                                         <ListItemText>About</ListItemText>
+                                    </MenuItem>
+                                    <MenuItem onClick={() => window.open("https://www.lifeaier.com/privacy-policy", "_blank", "noopener,noreferrer" )}>
+                                        <ListItemIcon><PrivacyTipIcon /></ListItemIcon>
+                                        <ListItemText>Privacy Policy</ListItemText>
+                                    </MenuItem>
+                                    <MenuItem onClick={() => window.open("https://www.lifeaier.com/term-of-service", "_blank", "noopener,noreferrer" )}>
+                                        <ListItemIcon><DescriptionIcon /></ListItemIcon>
+                                        <ListItemText>Terms of Service</ListItemText>
+                                    </MenuItem>
+                                    <MenuItem onClick={() => window.open("https://www.lifeaier.com/data-deletion", "_blank", "noopener,noreferrer" )}>
+                                        <ListItemIcon><DescriptionIcon /></ListItemIcon>
+                                        <ListItemText>Data Deletion</ListItemText>
                                     </MenuItem>
                                 </Menu>
                         </Box>
@@ -303,7 +307,7 @@ export default function Header() {
                             </IconButton>
                         </Box>
 
-                        {/* RIGHT USER AREA */}
+                        {/* RIGHT LOGOUT AREA */}
                         <Box
                             sx={{
                                 width: 60,               // symmetric with left

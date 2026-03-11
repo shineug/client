@@ -8,10 +8,7 @@ import Test1 from "./pages/3_Test1";
 import Test2 from "./pages/3_Test2";
 import Test3 from "./pages/3_Test3";
 import About from "./pages/6_About";
-import DataDeletion from "./pages/6_DataDeletion";
-import PrivacyPolicy from "./pages/6_PrivacyPolicy";
 import MailVerfication from "./pages/6_MailVerification";
-import TermsOfService from "./pages/6_TermsOfService";
 import Settings from "./pages/7_Settings";
 import User from "./pages/8_User";
 import Menu from "./pages/9_Menu";
@@ -32,9 +29,6 @@ function App() {
                 <AuthProvider>
                     <Routes>
                         <Route path="/login" element={<Login />} />
-                        <Route path="/data-deletion" element={<DataDeletion />} />
-                        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                        <Route path="/term-of-service" element={<TermsOfService />} />
                         <Route path="/verify" element={<MailVerfication />} />
                         <Route path="*" element={<NotFound />} />
 
